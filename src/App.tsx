@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import DashboardLayout from "./components/layout/DashboardLayout";
 import ActivityPage from "./pages/ActivityPage";
 
@@ -13,7 +18,7 @@ const App: React.FC = () => {
     <Router>
       <DashboardLayout>
         <Routes>
-          <Route path="/" element={<Placeholder title="Home" />} />
+          <Route path="/" element={<Navigate to="/activity" replace />} />
           <Route path="/activity" element={<ActivityPage />} />
           <Route path="/discover" element={<Placeholder title="Discover" />} />
           <Route path="/settings" element={<Placeholder title="Settings" />} />
