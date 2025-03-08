@@ -1,19 +1,20 @@
 import { NavLink } from "react-router-dom";
 import { FiHome, FiCompass, FiSettings } from "react-icons/fi";
-import { FaBolt } from "react-icons/fa";
-
 import BrandLogo from "../assets/brandLogo.svg";
+import BoltIcon from "./iconComponent/BoltIcon";
 
 interface MenuItem {
   id: string;
   label: string;
   path: string;
-  icon: React.ElementType;
+  icon:
+    | React.ElementType
+    | React.FC<{ size?: number | string; color?: string }>;
 }
 
 const menuItems: MenuItem[] = [
   { id: "home", label: "Home", path: "/", icon: FiHome },
-  { id: "activity", label: "Activity", path: "/activity", icon: FaBolt },
+  { id: "activity", label: "Activity", path: "/activity", icon: BoltIcon },
   { id: "discover", label: "Discover", path: "/discover", icon: FiCompass },
   { id: "settings", label: "Settings", path: "/settings", icon: FiSettings },
 ];
@@ -21,7 +22,7 @@ const menuItems: MenuItem[] = [
 const Sidebar: React.FC = () => {
   return (
     <div className="w-48 bg-white shadow-md  flex flex-col h-screen">
-      <div className="mb-8 flex items-center justify-center ">
+      <div className="mt-3 mb-8 flex items-center justify-center ">
         <img src={BrandLogo} alt="Anime Character" className="w-14 h-14" />
       </div>
 
@@ -38,7 +39,7 @@ const Sidebar: React.FC = () => {
               }`
             }
           >
-            <item.icon size={18} className="mr-2" />
+            <item.icon size={18} className="mr-3" />
             <span>{item.label}</span>
           </NavLink>
         ))}

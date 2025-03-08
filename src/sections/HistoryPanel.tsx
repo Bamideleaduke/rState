@@ -1,6 +1,6 @@
 import { FaEnvelopeOpen, FaEnvelope } from "react-icons/fa";
-import { MdOutlineWeb } from "react-icons/md";
 import HistoryItem from "../components/HistoryItem";
+import VisitedWebIcon from "../components/iconComponent/visitedWebIcon";
 
 const HistoryPanel: React.FC = () => {
   const historyItems = [
@@ -26,7 +26,7 @@ const HistoryPanel: React.FC = () => {
       action: "Visited website",
       date: "July 2, 2021 8am",
       isActive: false,
-      icon: <MdOutlineWeb size={14} />,
+      icon: <VisitedWebIcon size={14} />,
     },
     {
       id: 4,
