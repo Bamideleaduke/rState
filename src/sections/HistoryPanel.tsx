@@ -1,6 +1,6 @@
 import { FaEnvelopeOpen, FaEnvelope } from "react-icons/fa";
 import HistoryItem from "../components/HistoryItem";
-import VisitedWebIcon from "../components/iconComponent/visitedWebIcon";
+import VisitedWebIcon from "../components/iconComponent/VisitedWebIcon";
 
 const HistoryPanel: React.FC = () => {
   const historyItems = [
